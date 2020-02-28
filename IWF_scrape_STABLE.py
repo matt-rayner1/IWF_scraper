@@ -17,14 +17,14 @@ DESCRIPTION:        Interacts with IWF qualifier database to get current top lif
 class IWFbot():
     #Change webdriver depending on browser choice, and driver location
     def __init__(self):
-        self.driver = webdriver.Firefox(executable_path=r'your/path/here')
+        self.driver = webdriver.Firefox(executable_path=r'/your/path/here')
         self.driver.get('https://www.iwf.net/qualif/menu/')
         self.driver.implicitly_wait(5)
     
     #Refreshes driver session due to memory leak issues with Firefox.
     def refresh_driver(self, gender):
         self.driver.quit()
-        self.driver = webdriver.Firefox(executable_path=r'/home/user1/vscode/IWF_scrape_STABLE/geckodriver')
+        self.driver = webdriver.Firefox(executable_path=r'/your/path/here')
         self.driver.get('https://www.iwf.net/qualif/menu/')
         self.driver.implicitly_wait(5)
         self.gender_choice(gender)
